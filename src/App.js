@@ -6,6 +6,9 @@ import HandingEvents from "./HandingEvents";
 import ConditionalRendering from "./ConditionalRendering";
 import ListAndKeys from "./ListAndKeys";
 import Forms from "./Forms";
+import Calculator from "./Calculator";
+import CompositionVSInheritance from "./CompositionVSInheritance";
+import ThinkingInReact from "./ThinkingInReact";
 
 function calculateWinner(squares) {
     const lines = [
@@ -91,6 +94,7 @@ class App extends Component {
                         <TimeView/>
                     </dt>
                     <dt>
+                        ________________________________________________
                         <div className="game-board">
                             <Board squares={current.squares}
                                    onClick={(i) => this.handleClick(i)}/>
@@ -103,16 +107,32 @@ class App extends Component {
                         </div>
                     </dd>
                     <dt>
+                        ________________________________________________
                         <HandingEvents/>
                     </dt>
                     <dt>
+                        ________________________________________________
                         <ConditionalRendering/>
                     </dt>
                     <dt>
+                        ________________________________________________
                         <ListAndKeys/>
                     </dt>
                     <dt>
+                        ________________________________________________
                         <Forms/>
+                    </dt>
+                    <dt>
+                        ________________________________________________
+                        <Calculator/>
+                    </dt>
+                    <dt>
+                        ________________________________________________
+                        <CompositionVSInheritance/>
+                    </dt>
+                    <dt>
+                        ________________________________________________
+                        <ThinkingInReact/>
                     </dt>
                 </dl>
             </div>

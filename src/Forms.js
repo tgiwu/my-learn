@@ -28,13 +28,34 @@ class EssayForm extends Component {
     }
 }
 
+class FlavorForm extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return(
+            <label>
+                Pick your favorite la Croix flavor:
+                <select onChange={this.props.onChange}>
+                    <option value='grapefruit'>Grapefruit</option>
+                    <option value='lime'>Lime</option>
+                    <option value='coconut'>Coconut</option>
+                    <option value='mango'>mango</option>
+                </select>
+            </label>
+    )
+    }
+}
+
 class Forms extends Component {
     constructor(props) {
         super(props)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleEssayChange = this.handleEssayChange.bind(this)
-        this.state = {name: '', essay: ''}
+        this.handleFlavorChange = this.handleFlavorChange.bind(this)
+        this.state = {name: '', essay: '', flavor:''}
     }
 
     handleSubmit(event) {
@@ -51,16 +72,20 @@ class Forms extends Component {
         console.info('essay ', this.state.essay)
     }
 
+    handleFlavorChange(event) {
+        this.setState({flavor: event.target.value})
+    }
+
     componentDidMount() {}
 
     componentWillUnmount() {}
-
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <NameForm onChange={this.handleNameChange}/>
                     <EssayForm onChange={this.handleEssayChange}/>
+                    <FlavorForm onChange={this.handleFlavorChange}/>
                 </form>
             </div>
         )
